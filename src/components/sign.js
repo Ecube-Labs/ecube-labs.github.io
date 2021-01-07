@@ -1,10 +1,3 @@
-import logo from "../ci-logo-english-rgb.png";
-import logo2x from "../ci-logo-english-rgb@2x.png";
-import logo3x from "../ci-logo-english-rgb@3x.png";
-import solution from "../solution.png";
-import solution2x from "../solution@2x.png";
-import solution3x from "../solution@3x.png";
-
 // NOTE: 서명에 쓰이는 퍼블리싱 수준은 html4, css2 기준으로 하는게 여러 메일 클라이언트에서 깨지지 않게 하는 방법이다.
 // NOTE: 서명은 무조건 inline-style로 해야 메일 클라이언트에서 정상적으로 적용된다.
 export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
@@ -61,9 +54,10 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
                                 href="https://www.ecubelabs.com/"
                                 target="_blank"
                               >
+                                {/* NOTE: public 폴더에 있는 파일 참조하는것임 */}
                                 <img
-                                  src={logo}
-                                  srcSet={`${logo2x} 2x, ${logo3x} 3x`}
+                                  src={"/ci-logo-english-rgb.png"}
+                                  srcSet={`/ci-logo-english-rgb@2x.png 2x, /ci-logo-english-rgb@3x.png 3x`}
                                   alt="Ecube Labs"
                                   style={{
                                     height: "42px",
@@ -168,14 +162,14 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
                         href="https://www.ecubelabs.com/solution/"
                         target="_blank"
                       >
+                        {/* NOTE: public 폴더에 있는 파일 참조하는것임 */}
                         <img
                           style={{
                             width: "218px",
                             height: "202px",
                           }}
-                          // HACK: 왜 이건 base64로 참조하지 않는것인가? 용량? -_-
-                          src={`${window.location.origin}${solution}`}
-                          srcSet={`${window.location.origin}${solution2x} 2x, ${window.location.origin}${solution3x} 3x`}
+                          src={"/solution.png"}
+                          srcSet={`/solution@2x.png 2x, /solution@3x.png 3x`}
                           alt="Products"
                         />
                       </a>
