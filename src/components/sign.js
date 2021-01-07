@@ -16,6 +16,7 @@ export function Sign({ name }) {
         type="text/css"
       ></link>
       <table
+        id="mail-sign"
         cellPadding={0}
         cellSpacing={0}
         style={{
@@ -62,7 +63,7 @@ export function Sign({ name }) {
                               >
                                 <img
                                   src={logo}
-                                  srcset={`${logo2x} 2x,${logo3x} 3x`}
+                                  srcSet={`${logo2x} 2x, ${logo3x} 3x`}
                                   alt="Ecube Labs"
                                   style={{
                                     height: "42px",
@@ -170,8 +171,12 @@ export function Sign({ name }) {
                         target="_blank"
                       >
                         <img
+                          style={{
+                            width: "218px",
+                            height: "202px",
+                          }}
                           src={solution}
-                          srcset={`${solution2x} 2x,${solution3x} 3x`}
+                          srcSet={`${solution2x} 2x, ${solution3x} 3x`}
                           alt="Products"
                         />
                       </a>
