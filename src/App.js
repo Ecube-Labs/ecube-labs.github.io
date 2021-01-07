@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import { Sign } from "./components/sign";
+import howToSetting1 from "./settings-1.png";
+import howToSetting2 from "./settings-2.png";
 
 const locationMap = {
   Seoul: {
@@ -55,14 +57,20 @@ function App() {
 
   return (
     <div className="App">
-      <input value={name} onChange={(e) => setName(e.currentTarget.value)} />
+      <input
+        value={name}
+        onChange={(e) => setName(e.currentTarget.value)}
+        placeholder="Name"
+      />
       <input
         value={jobTitle}
         onChange={(e) => setJobTitle(e.currentTarget.value)}
+        placeholder="Job title / Department"
       />
       <input
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.currentTarget.value)}
+        placeholder="Mobile phone"
       />
       <select value={loc} onChange={(e) => setLoc(e.currentTarget.value)}>
         <option value="Seoul">Seoul</option>
@@ -82,6 +90,28 @@ function App() {
         fax={locationMap[loc].fax}
         address={locationMap[loc].address}
       />
+
+      <hr />
+      <h3>How to add the signature to Gmail?</h3>
+      <div>
+        <ol>
+          <li>
+            Select the signature <strong>(CTRL + A)</strong> and copy to
+            clipboard <strong>(CTRL + C)</strong>
+          </li>
+          <li>
+            In Gmail, open the Settings page <br /> <img src={howToSetting1} />
+          </li>
+          <li>
+            Paste <strong>(CTRL + V)</strong> the signature to the Signature
+            text area. <br />
+            If you had an existing signature, first remove it and save the
+            settings. <br />
+            <img src={howToSetting2} />
+          </li>
+          <li>Click 'Save Changes'</li>
+        </ol>
+      </div>
     </div>
   );
 }
