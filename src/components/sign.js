@@ -22,7 +22,7 @@ export function Sign({ name }) {
         style={{
           width: "600px",
           minHeight: "265px",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#ffffff", // FIXME: 다크모드에서도 안된다. 어떻게 할까?
         }}
       >
         <tbody>
@@ -175,8 +175,9 @@ export function Sign({ name }) {
                             width: "218px",
                             height: "202px",
                           }}
-                          src={solution}
-                          srcSet={`${solution2x} 2x, ${solution3x} 3x`}
+                          // HACK: 왜 이건 base64로 참조하지 않는것인가? 용량? -_-
+                          src={`${window.location.origin}${solution}`}
+                          srcSet={`${window.location.origin}${solution2x} 2x, ${window.location.origin}${solution3x} 3x`}
                           alt="Products"
                         />
                       </a>
