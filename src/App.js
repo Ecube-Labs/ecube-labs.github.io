@@ -6,110 +6,207 @@ function App() {
   return (
     <div className="App">
       <table
+        cellPadding={0}
+        cellSpacing={0}
         style={{
-          borderTop: "1px solid #5bc500",
-          borderSpacing: "0px",
-          width: "580px",
-          minHeight: "170px",
+          width: "600px",
+          minHeight: "265px",
+          // border: "1px solid black", // FIXME: 퍼블리싱 편하게 해주는 용도. 배포 전에 지울것
         }}
       >
         <tbody>
-          <tr style={{ height: "5px" }}></tr>
+          <tr style={{ height: "16px" }}></tr>
           <tr>
             <td
               style={{
-                padding: "0px",
-                borderRight: "1px solid #bdbdbe",
-                width: "155px",
+                width: "16px",
               }}
-            >
-              <a href="https://www.ecubelabs.com/" target="_blank">
-                <img
-                  src={logo}
-                  alt="Ecube Labs"
-                  style={{ margin: "0px 12.5px 0px 23px", height: "100px" }}
-                />
-              </a>
-            </td>
-            <td
-              style={{
-                padding: "0px 10px",
-                fontFamily: "Trebuchet MS",
-                color: "#000",
-                width: "245px",
-              }}
-            >
-              <h2
-                style={{ marginBottom: "2px", fontSize: "15px", color: "#000" }}
-              >
-                Charlie Kim
-              </h2>
-              <p style={{ marginTop: "0px", fontSize: "12px", color: "#000" }}>
-                <strong>SW</strong>
-              </p>
-              <p
+            ></td>
+            <td>
+              {/* NOTE: content */}
+              <table
+                cellPadding={0}
+                cellSpacing={0}
                 style={{
-                  fontSize: "10px",
-                  marginTop: "20px",
-                  marginBottom: "0px",
-                  color: "#000",
+                  // border: "1px solid black", // FIXME: 퍼블리싱 편하게 해주는 용도. 배포 전에 지울것
                 }}
               >
-                #710, 288, Digital-ro, Guro-gu, <br />
-                Seoul, Republic of Korea (Postal: 08390) <br />
-                <span style={{ display: "inline-block", width: "10px" }}>
-                  T
-                </span>
-                <strong>+82-2-868-0293</strong> <br />
-                <span style={{ display: "inline-block", width: "10px" }}>
-                  F
-                </span>
-                <strong>+82-2-868-0294</strong> <br />
-                <span style={{ display: "inline-block", width: "10px" }}>
-                  M
-                </span>
-                <strong>123</strong>
-              </p>
+                <tbody>
+                  <tr>
+                    {/* Left latters */}
+                    <td>
+                      <table
+                        cellPadding={0}
+                        cellSpacing={0}
+                        style={{
+                          width: "100%",
+                          textAlign: "left",
+                          // border: "1px solid black", // FIXME: 퍼블리싱 편하게 해주는 용도. 배포 전에 지울것
+                        }}
+                      >
+                        <tbody>
+                          {/* Logo row */}
+                          <tr>
+                            <td>
+                              <a
+                                style={{
+                                  display: "block",
+                                  height: "42px",
+                                  width: "168px",
+                                }}
+                                href="https://www.ecubelabs.com/"
+                                target="_blank"
+                              >
+                                <img
+                                  src={logo}
+                                  alt="Ecube Labs"
+                                  style={{
+                                    height: "42px",
+                                    width: "168px",
+                                  }}
+                                />
+                              </a>
+                            </td>
+                          </tr>
+                          {/* Name row */}
+                          <tr>
+                            <td>
+                              <div
+                                style={{
+                                  marginTop: "8px",
+                                  marginBottom: "4px",
+                                  fontFamily: "Roboto",
+                                  fontSize: "16px",
+                                  fontWeight: "bold",
+                                  fontStretch: "normal",
+                                  fontStyle: "normal",
+                                  lineHeight: "1.5",
+                                  letterSpacing: "0.09px",
+                                  color: "rgba(0, 0, 0, 0.87)",
+                                }}
+                              >
+                                Tim kang
+                              </div>
+                            </td>
+                          </tr>
+                          {/* Job title / position row */}
+                          <tr>
+                            <td>
+                              <div
+                                style={{
+                                  marginBottom: "4px",
+                                  fontFamily: "Roboto",
+                                  fontSize: "14px",
+                                  fontWeight: "normal",
+                                  fontStretch: "normal",
+                                  fontStyle: "normal",
+                                  lineHeight: "1.43",
+                                  letterSpacing: "0.1px",
+                                  color: "rgba(0, 0, 0, 0.87)",
+                                }}
+                              >
+                                DevOps Engineer
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div
+                                style={{
+                                  marginBottom: "4px",
+                                  fontFamily: "Roboto",
+                                  fontSize: "14px",
+                                  fontWeight: "normal",
+                                  fontStretch: "normal",
+                                  fontStyle: "normal",
+                                  lineHeight: "1.43",
+                                  letterSpacing: "0.1px",
+                                  color: "rgba(0, 0, 0, 0.87)",
+                                }}
+                              >
+                                T +82.2.868.0293
+                                <br />
+                                F +82.2.868.0294
+                                <br />M +82.10.3007.4420
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div
+                                style={{
+                                  fontFamily: "Roboto",
+                                  fontSize: "14px",
+                                  fontWeight: "normal",
+                                  fontStretch: "normal",
+                                  fontStyle: "normal",
+                                  lineHeight: "1.43",
+                                  letterSpacing: "0.1px",
+                                  color: "rgba(0, 0, 0, 0.87)",
+                                }}
+                              >
+                                #710, 288, Digital-ro, Guro-gu, Seoul, <br />
+                                Republic of Korea (Postal: 08390)
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    {/* Right banner */}
+                    <td
+                      style={{
+                        textAlign: "right",
+                        width: "218px",
+                        height: "202px",
+                      }}
+                    >
+                      <a
+                        href="https://www.ecubelabs.com/solution/"
+                        target="_blank"
+                      >
+                        <img src={solution} alt="Products" />
+                      </a>
+                    </td>
+                  </tr>
+          <tr style={{ height: "4px" }}></tr>
+                  <tr>
+                    <td
+                      colSpan={2}
+                      style={{
+                        height: "27px",
+                        fontFamily: "Roboto",
+                        fontSize: "8px",
+                        fontWeight: "normal",
+                        fontStretch: "normal",
+                        fontStyle: "normal",
+                        lineHeight: "1.13",
+                        letterSpacing: "normal",
+                        textAlign: "justify",
+                        color: "rgba(0, 0, 0, 0.38)",
+                      }}
+                    >
+                      This message and any attachments are solely for the
+                      intended recipient and may contain confidential and/or
+                      privileged information. If you are not the intended
+                      recipient, any disclosure, copying, use, and/or
+                      distribution of the information included in this message
+                      and its attachments is prohibited. If you have received
+                      this communication in error, please notify us by replying
+                      to this email and immediately delete this message and/or
+                      attachments.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </td>
-            <td style={{ padding: "0px", width: "175px" }}>
-              <a href="https://www.ecubelabs.com/solution/" target="_blank">
-                <img
-                  src={solution}
-                  alt="Products"
-                />
-              </a>
-            </td>
-          </tr>
-          <tr style={{ height: "5px" }}></tr>
-          <tr
-            style={{
-              height: "31px",
-              backgroundColor: "#5bc500",
-              color: "#fff",
-              textAlign: "center",
-              margin: "0px",
-              padding: "0px",
-            }}
-          >
             <td
-              colSpan="3"
               style={{
-                padding: "0px 10px",
-                fontFamily: "Trebuchet MS",
-                margin: "0px",
-                fontSize: "7px",
+                width: "16px",
               }}
-            >
-              This message and any attachments are solely for the intended
-              recipient and may contain confidential and/or privileged
-              information. If you are not the intended recipient, any
-              disclosure, copying, use, and/or distribution of the information
-              included in this message and its attachments is prohibited. If you
-              have received this communication in error, please notify us by
-              replying to this email and immediately delete this message and/or
-              attachments.
-            </td>
+            ></td>
           </tr>
+          <tr style={{ height: "16px" }}></tr>
         </tbody>
       </table>
     </div>
