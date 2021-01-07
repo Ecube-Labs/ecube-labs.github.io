@@ -56,8 +56,8 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
                               >
                                 {/* NOTE: public 폴더에 있는 파일 참조하는것임 */}
                                 <img
-                                  src={"/ci-logo-english-rgb.png"}
-                                  srcSet={`/ci-logo-english-rgb@2x.png 2x, /ci-logo-english-rgb@3x.png 3x`}
+                                  src={`${window.location.origin}/ci-logo-english-rgb.png`}
+                                  srcSet={`${window.location.origin}/ci-logo-english-rgb@2x.png 2x, ${window.location.origin}/ci-logo-english-rgb@3x.png 3x`}
                                   alt="Ecube Labs"
                                   style={{
                                     height: "42px",
@@ -168,8 +168,8 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
                             width: "218px",
                             height: "202px",
                           }}
-                          src={"/solution.png"}
-                          srcSet={`/solution@2x.png 2x, /solution@3x.png 3x`}
+                          src={`${window.location.origin}/solution.png`}
+                          srcSet={`${window.location.origin}/solution@2x.png 2x, ${window.location.origin}/solution@3x.png 3x`}
                           alt="Products"
                         />
                       </a>
