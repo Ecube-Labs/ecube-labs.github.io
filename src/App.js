@@ -96,10 +96,6 @@ function App() {
       <div>
         <ol>
           <li>
-            Select the signature <strong>(CTRL + A)</strong> and copy to
-            clipboard <strong>(CTRL + C)</strong>
-          </li>
-          <li>
             In Gmail, open the Settings page <br /> <img src={howToSetting1} />
           </li>
           <li>

@@ -13,19 +13,13 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
         cellPadding={0}
         cellSpacing={0}
         style={{
-          width: "600px",
-          minHeight: "265px",
+          width: "568px",
+          minHeight: "249px",
           backgroundColor: "#ffffff", // FIXME: 다크모드에서도 안된다. 어떻게 할까?
         }}
       >
         <tbody>
-          <tr style={{ height: "16px" }}></tr>
           <tr>
-            <td
-              style={{
-                width: "16px",
-              }}
-            ></td>
             <td>
               {/* NOTE: content */}
               <table cellPadding={0} cellSpacing={0}>
@@ -205,11 +199,6 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
                 </tbody>
               </table>
             </td>
-            <td
-              style={{
-                width: "16px",
-              }}
-            ></td>
           </tr>
           <tr style={{ height: "12px" }}></tr>
         </tbody>
