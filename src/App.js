@@ -1,117 +1,113 @@
-import logo from "./ci-logo-english-rgb.png";
-import solution from "./solution.png";
+import { useState } from "react";
 import "./App.css";
+import { Sign } from "./components/sign";
+import howToSetting1 from "./settings-1.png";
+import howToSetting2 from "./settings-2.png";
+
+const locationMap = {
+  Seoul: {
+    tel: "+82.2.868.0293",
+    fax: "+82.2.868.0294",
+    address: (
+      <>
+        #710, 288, Digital-ro, Guro-gu, Seoul, <br />
+        Republic of Korea (Postal: 08390)
+      </>
+    ),
+  },
+  Gimpo: {
+    tel: "+82.2.868.0293",
+    fax: "+82.2.868.0294",
+    address: "김포시 통진읍 귀전리 545번지",
+  },
+  "Los Angeles": {
+    tel: "+1-213-282-7850",
+    fax: "+1-213-289-2869",
+    address: (
+      <>
+        508 Monterey Pass Rd, Unit B<br />
+        Monterey Park, CA 91754, United States
+      </>
+    ),
+  },
+};
 
 function App() {
+  const [name, setName] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [loc, setLoc] = useState("Seoul");
+
+  const copyToClipboard = () => {
+    const elMailSign = document.getElementById("mail-sign");
+    const range = document.createRange();
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+
+    try {
+      range.selectNodeContents(elMailSign);
+      sel.addRange(range);
+    } catch (e) {
+      range.selectNode(elMailSign);
+      sel.addRange(range);
+    }
+
+    document.execCommand("copy");
+  };
+
   return (
     <div className="App">
-      <table
-        style={{
-          borderTop: "1px solid #5bc500",
-          borderSpacing: "0px",
-          width: "580px",
-          minHeight: "170px",
-        }}
-      >
-        <tbody>
-          <tr style={{ height: "5px" }}></tr>
-          <tr>
-            <td
-              style={{
-                padding: "0px",
-                borderRight: "1px solid #bdbdbe",
-                width: "155px",
-              }}
-            >
-              <a href="https://www.ecubelabs.com/" target="_blank">
-                <img
-                  src={logo}
-                  alt="Ecube Labs"
-                  style={{ margin: "0px 12.5px 0px 23px", height: "100px" }}
-                />
-              </a>
-            </td>
-            <td
-              style={{
-                padding: "0px 10px",
-                fontFamily: "Trebuchet MS",
-                color: "#000",
-                width: "245px",
-              }}
-            >
-              <h2
-                style={{ marginBottom: "2px", fontSize: "15px", color: "#000" }}
-              >
-                Charlie Kim
-              </h2>
-              <p style={{ marginTop: "0px", fontSize: "12px", color: "#000" }}>
-                <strong>SW</strong>
-              </p>
-              <p
-                style={{
-                  fontSize: "10px",
-                  marginTop: "20px",
-                  marginBottom: "0px",
-                  color: "#000",
-                }}
-              >
-                #710, 288, Digital-ro, Guro-gu, <br />
-                Seoul, Republic of Korea (Postal: 08390) <br />
-                <span style={{ display: "inline-block", width: "10px" }}>
-                  T
-                </span>
-                <strong>+82-2-868-0293</strong> <br />
-                <span style={{ display: "inline-block", width: "10px" }}>
-                  F
-                </span>
-                <strong>+82-2-868-0294</strong> <br />
-                <span style={{ display: "inline-block", width: "10px" }}>
-                  M
-                </span>
-                <strong>123</strong>
-              </p>
-            </td>
-            <td style={{ padding: "0px", width: "175px" }}>
-              <a href="https://www.ecubelabs.com/solution/" target="_blank">
-                <img
-                  src={solution}
-                  alt="Products"
-                />
-              </a>
-            </td>
-          </tr>
-          <tr style={{ height: "5px" }}></tr>
-          <tr
-            style={{
-              height: "31px",
-              backgroundColor: "#5bc500",
-              color: "#fff",
-              textAlign: "center",
-              margin: "0px",
-              padding: "0px",
-            }}
-          >
-            <td
-              colSpan="3"
-              style={{
-                padding: "0px 10px",
-                fontFamily: "Trebuchet MS",
-                margin: "0px",
-                fontSize: "7px",
-              }}
-            >
-              This message and any attachments are solely for the intended
-              recipient and may contain confidential and/or privileged
-              information. If you are not the intended recipient, any
-              disclosure, copying, use, and/or distribution of the information
-              included in this message and its attachments is prohibited. If you
-              have received this communication in error, please notify us by
-              replying to this email and immediately delete this message and/or
-              attachments.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <input
+        value={name}
+        onChange={(e) => setName(e.currentTarget.value)}
+        placeholder="Name"
+      />
+      <input
+        value={jobTitle}
+        onChange={(e) => setJobTitle(e.currentTarget.value)}
+        placeholder="Job title / Department"
+      />
+      <input
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.currentTarget.value)}
+        placeholder="Mobile phone"
+      />
+      <select value={loc} onChange={(e) => setLoc(e.currentTarget.value)}>
+        <option value="Seoul">Seoul</option>
+        <option value="Gimpo">Gimpo</option>
+        <option value="Los Angeles">Los Angeles</option>
+      </select>
+      <button onClick={copyToClipboard}>copy</button>
+      <hr />
+
+      <h3>Preview</h3>
+      {/* NOTE: 퍼블리싱 대충해서 컨텐츠 안들어가면 템플릿 깨짐. 기본값 대충 넣어둠. */}
+      <Sign
+        name={name || "HyeonJu Park"}
+        jobTitle={jobTitle || "Designer / Design Department"}
+        phoneNumber={phoneNumber || "+82.10.3007.4420"}
+        tel={locationMap[loc].tel}
+        fax={locationMap[loc].fax}
+        address={locationMap[loc].address}
+      />
+
+      <hr />
+      <h3>How to add the signature to Gmail?</h3>
+      <div>
+        <ol>
+          <li>
+            In Gmail, open the Settings page <br /> <img src={howToSetting1} />
+          </li>
+          <li>
+            Paste <strong>(CTRL + V)</strong> the signature to the Signature
+            text area. <br />
+            If you had an existing signature, first remove it and save the
+            settings. <br />
+            <img src={howToSetting2} />
+          </li>
+          <li>Click 'Save Changes'</li>
+        </ol>
+      </div>
     </div>
   );
 }
