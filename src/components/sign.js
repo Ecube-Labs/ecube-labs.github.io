@@ -14,6 +14,7 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
         cellSpacing={0}
         style={{
           width: "568px",
+          maxWidth: "568px",
           minHeight: "249px",
           backgroundColor: "#ffffff", // FIXME: 다크모드에서도 안된다. 어떻게 할까?
         }}
