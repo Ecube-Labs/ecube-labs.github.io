@@ -1,5 +1,3 @@
-import bannerBackground from "./banner-image-background.png";
-
 // NOTE: 서명에 쓰이는 퍼블리싱 수준은 html4, css2 기준으로 하는게 여러 메일 클라이언트에서 깨지지 않게 하는 방법이다.
 // NOTE: 서명은 무조건 inline-style로 해야 메일 클라이언트에서 정상적으로 적용된다.
 export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
@@ -57,8 +55,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   <tr>
                     <td>
                       <img
-                        src={`${window.location.origin}/gmail-signature.gif`}
-                        srcSet={`${window.location.origin}/gmail-signature@2x.gif 2x, ${window.location.origin}/gmail-signature@3x.gif 3x`}
+                        src={`${window.location.origin}/gmail-signature@2x.gif`}
                         style={{ height: "40px" }}
                         alt="Service coverage"
                       />
@@ -140,24 +137,28 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
           <tr>
             <td colSpan="3" style={{ height: "16px" }}></td>
           </tr>
-          <tr
-            style={{
-              height: "64px",
-              backgroundImage: `url(${bannerBackground})`,
-            }}
-          >
+          <tr>
             <td colSpan="3">
-              <table cellPadding={0} cellSpacing={0}>
+              <table
+                cellPadding={0}
+                cellSpacing={0}
+                style={{
+                  height: "64px",
+                  backgroundImage: `url(${window.location.origin}/banner-image-background.png)`,
+                  // backgroundImage: `url(${bannerBackground})`, NOTE: 이미지가 base64 로 포함되면 지메일에서 서명을 등록할 때 이미지가 날아간다.
+                }}
+              >
                 <tbody>
                   <tr>
-                    <td valign="middle">
+                    <td>
+                      {/* HACK: img 에 marginTop 을 주면 지메일에서 서명을 등록할 때 배너 높이가 이상해진다 -_- */}
+                      <div style={{ display: "block", height: "4px" }} />
                       <img
                         src={`${window.location.origin}/banner-image-dumpster.png`}
                         srcSet={`${window.location.origin}/banner-image-dumpster@2x.png 2x, ${window.location.origin}/banner-image-dumpster@3x.png 3x`}
                         style={{
                           width: "65px",
                           height: "53px",
-                          marginTop: "8px",
                           marginLeft: "8px",
                           marginRight: "12px",
                         }}
@@ -172,30 +173,44 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                           lineHeight: "14px",
                           fontWeight: 500,
                           color: "#FFFFFF",
-                          marginRight: "48px",
+                          marginRight: "46px",
                         }}
                       >
                         Want to Save More?
                       </div>
                     </td>
                     <td>
-                      <a
+                      <table
+                        cellPadding={0}
+                        cellSpacing={0}
+                        bgcolor="white"
                         style={{
-                          display: "inline-block",
-                          padding: "8px 36px",
-                          borderRadius: "1px",
-                          backgroundImage:
-                            "linear-gradient(to left, #ffffff, #d2e4ff 0%)",
-                          fontSize: "16px",
-                          lineHeight: "14px",
-                          fontWeight: "bold",
-                          color: "#015dee",
-                          textDecoration: "none",
+                          width: "152px",
+                          height: "30px",
+                          textAlign: "center",
+                          marginRight: "16px",
                         }}
-                        href="https://refer.haulla.com/?utm_source=Gmail&utm_medium=esignature&utm_content=refer_page"
                       >
-                        Save Now !
-                      </a>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <a
+                                style={{
+                                  fontSize: "16px",
+                                  fontWeight: "bold",
+                                  color: "#015dee",
+                                  textDecoration: "none !important", // NOTE: not working
+                                  textDecorationLine: "none !important", // NOTE: not working
+                                  textDecorationColor: "#fff", // NOTE: not working
+                                }}
+                                href="https://refer.haulla.com/?utm_source=Gmail&utm_medium=esignature&utm_content=refer_page"
+                              >
+                                Refer Haulla !
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </td>
                   </tr>
                 </tbody>
