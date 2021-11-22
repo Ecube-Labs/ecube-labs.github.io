@@ -28,8 +28,9 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   <tr>
                     <td>
                       <img
-                        src={`${window.location.origin}/bi-haulla-logo-rgb.png`}
-                        srcSet={`${window.location.origin}/bi-haulla-logo-rgb@2x.png 2x, ${window.location.origin}/bi-haulla-logo-rgb@3x.png 3x`}
+                        src={`${window.location.origin}/bi-haulla-logo-rgb@3x.png`}
+                        // NOTE: 지메일 서명에서는 항상 default src 로 렌더링 됨
+                        // srcSet={`${window.location.origin}/bi-haulla-logo-rgb@2x.png 2x, ${window.location.origin}/bi-haulla-logo-rgb@3x.png 3x`}
                         style={{
                           width: "111px",
                           height: "29px",
@@ -151,13 +152,10 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                 href="https://refer.haulla.com/?utm_source=Gmail&utm_medium=esignature&utm_content=refer_page"
               >
                 <img
-                  src={`${window.location.origin}/haulla-gmail-signature-banner.png`}
-                  srcSet={`${window.location.origin}/haulla-gmail-signature-banner@2x.png 2x, ${window.location.origin}/haulla-gmail-signature-banner@3x.png 3x`}
+                  src={`${window.location.origin}/haulla-gmail-signature-banner@3x.png`}
                   style={{
                     width: "448px",
                     height: "64px",
-                    // marginLeft: "8px",
-                    // marginRight: "12px",
                   }}
                   alt="Dumpster"
                 />
