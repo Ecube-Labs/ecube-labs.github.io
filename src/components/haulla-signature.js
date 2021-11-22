@@ -55,7 +55,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   <tr>
                     <td>
                       <img
-                        src={`${window.location.origin}/gmail-signature@2x.gif`}
+                        src={`${window.location.origin}/gmail-signature@3x.gif`}
                         style={{ height: "40px" }}
                         alt="Service coverage"
                       />
@@ -71,7 +71,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   height: "111px",
                   backgroundColor: "black",
                   opacity: 0.38,
-                  marginLeft: "71px",
+                  marginLeft: "24px",
                   marginRight: "24px",
                 }}
               ></div>
@@ -139,82 +139,29 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
           </tr>
           <tr>
             <td colSpan="3">
-              <table
-                cellPadding={0}
-                cellSpacing={0}
+              {/* 원래 배너에 포함된 이미지, 백그라운드, 링크 등이 모두 분리된 컴포넌트였는데 이메일 서명에서는 레이아웃 구성이 상당히 까다롭고 textDecoration 같은 property 는 동작도 하지 않는다.
+              그래서 모든 컴포넌트를 통합한 배너 이미지를 새로 받았다.
+              Takeaway: 서명에서 복잡한 컴포넌트는 그냥 통 이미지로 받는게 좋다. */}
+              <a
                 style={{
-                  height: "64px",
-                  backgroundImage: `url(${window.location.origin}/banner-image-background.png)`,
-                  // backgroundImage: `url(${bannerBackground})`, NOTE: 이미지가 base64 로 포함되면 지메일에서 서명을 등록할 때 이미지가 날아간다.
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  color: "#015dee",
                 }}
+                href="https://refer.haulla.com/?utm_source=Gmail&utm_medium=esignature&utm_content=refer_page"
               >
-                <tbody>
-                  <tr>
-                    <td>
-                      {/* HACK: img 에 marginTop 을 주면 지메일에서 서명을 등록할 때 배너 높이가 이상해진다 -_- */}
-                      <div style={{ display: "block", height: "4px" }} />
-                      <img
-                        src={`${window.location.origin}/banner-image-dumpster.png`}
-                        srcSet={`${window.location.origin}/banner-image-dumpster@2x.png 2x, ${window.location.origin}/banner-image-dumpster@3x.png 3x`}
-                        style={{
-                          width: "65px",
-                          height: "53px",
-                          marginLeft: "8px",
-                          marginRight: "12px",
-                        }}
-                        alt="Dumpster"
-                      />
-                    </td>
-                    <td>
-                      <div
-                        style={{
-                          display: "inline-block",
-                          fontSize: "16px",
-                          lineHeight: "14px",
-                          fontWeight: 500,
-                          color: "#FFFFFF",
-                          marginRight: "46px",
-                        }}
-                      >
-                        Want to Save More?
-                      </div>
-                    </td>
-                    <td>
-                      <table
-                        cellPadding={0}
-                        cellSpacing={0}
-                        bgcolor="white"
-                        style={{
-                          width: "152px",
-                          height: "30px",
-                          textAlign: "center",
-                          marginRight: "16px",
-                        }}
-                      >
-                        <tbody>
-                          <tr>
-                            <td>
-                              <a
-                                style={{
-                                  fontSize: "16px",
-                                  fontWeight: "bold",
-                                  color: "#015dee",
-                                  textDecoration: "none !important", // NOTE: not working
-                                  textDecorationLine: "none !important", // NOTE: not working
-                                  textDecorationColor: "#fff", // NOTE: not working
-                                }}
-                                href="https://refer.haulla.com/?utm_source=Gmail&utm_medium=esignature&utm_content=refer_page"
-                              >
-                                Refer Haulla !
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                <img
+                  src={`${window.location.origin}/haulla-gmail-signature-banner.png`}
+                  srcSet={`${window.location.origin}/haulla-gmail-signature-banner@2x.png 2x, ${window.location.origin}/haulla-gmail-signature-banner@3x.png 3x`}
+                  style={{
+                    width: "448px",
+                    height: "64px",
+                    // marginLeft: "8px",
+                    // marginRight: "12px",
+                  }}
+                  alt="Dumpster"
+                />
+              </a>
             </td>
           </tr>
           {/* HACK: 맥 메일 앱에서 서명을 붙여 넣을 때 empty row 가 있어야 커서가 다음줄에 포커스 되면서 정상적으로 복붙이 된다. */}
