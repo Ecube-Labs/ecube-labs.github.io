@@ -6,13 +6,23 @@ import howToSetting1 from "./settings-1.png";
 import howToSetting2 from "./settings-2.png";
 
 const locationMap = {
-  Seoul: {
+  HQ: {
     tel: "+82.2.868.0293",
     fax: "+82.2.868.0294",
     address: (
       <>
-        #710, 288, Digital-ro, Guro-gu, Seoul, <br />
-        Republic of Korea (Postal: 08390)
+        #1503, 55, Digital-ro 34-gil, Guro-gu, Seoul, <br />
+        Republic of Korea (Postal: 08378)
+      </>
+    ),
+  },
+  FastFive: {
+    tel: "+82.2.868.0293",
+    fax: "+82.2.868.0294",
+    address: (
+      <>
+        #1323, 300, Digital-ro, Guro-gu, Seoul, <br />
+        Republic of Korea (Postal: 08379)
       </>
     ),
   },
@@ -37,7 +47,7 @@ function Template({ id, component: Component }) {
   const [name, setName] = useState("");
   const [jobTitle, setJobTitle] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [loc, setLoc] = useState("Seoul");
+  const [loc, setLoc] = useState("HQ");
 
   const copyToClipboard = () => {
     const elMailSign = document.getElementById(id);
@@ -74,7 +84,8 @@ function Template({ id, component: Component }) {
         placeholder="Mobile phone"
       />
       <select value={loc} onChange={(e) => setLoc(e.currentTarget.value)}>
-        <option value="Seoul">Seoul</option>
+        <option value="HQ">HQ</option>
+        <option value="FastFive">FastFive</option>
         <option value="Gimpo">Gimpo</option>
         <option value="Los Angeles">Los Angeles</option>
       </select>
