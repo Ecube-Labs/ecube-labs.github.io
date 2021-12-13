@@ -152,7 +152,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                 href="https://refer.haulla.com/?utm_source=Gmail&utm_medium=esignature&utm_content=refer_page"
               >
                 <img
-                  src={`${window.location.origin}/haulla-gmail-signature-banner@3x.png`}
+                  src={`${window.location.origin}/haulla-gmail-signature-banner-v-2@3x.png`}
                   style={{
                     width: "448px",
                     height: "64px",

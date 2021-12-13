@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { EcubeLabsSignature } from "./components/ecube-labs-signature";
-import { HaullaSignature } from "./components/haulla-signature.js";
+import { HaullaSignature } from "./components/haulla-signature";
 import howToSetting1 from "./settings-1.png";
 import howToSetting2 from "./settings-2.png";
 
