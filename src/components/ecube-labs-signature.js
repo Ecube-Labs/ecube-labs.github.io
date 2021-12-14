@@ -1,6 +1,6 @@
 // NOTE: 서명에 쓰이는 퍼블리싱 수준은 html4, css2 기준으로 하는게 여러 메일 클라이언트에서 깨지지 않게 하는 방법이다.
 // NOTE: 서명은 무조건 inline-style로 해야 메일 클라이언트에서 정상적으로 적용된다.
-export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
+export function EcubeLabsSignature({ id, name, jobTitle, phoneNumber, tel, fax, address }) {
   return (
     <>
       <link
@@ -9,7 +9,7 @@ export function Sign({ name, jobTitle, phoneNumber, tel, fax, address }) {
         type="text/css"
       ></link>
       <table
-        id="mail-sign"
+        id={id}
         cellPadding={0}
         cellSpacing={0}
         style={{
