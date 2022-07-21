@@ -123,7 +123,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   <tr>
                     <td style={{ fontSize: "16px", lineHeight: "24px" }}>
                       <a
-                        href="https://www.haulla.com?utm_source=Gmail&utm_medium=esignature&utm_content=main_page"
+                        href="https://www.haulla.com/?utm_source=sales&utm_medium=email_esignature&utm_content=main_page"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -149,7 +149,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   fontWeight: "bold",
                   color: "#015dee",
                 }}
-                href="https://refer.haulla.com/?utm_source=Gmail&utm_medium=esignature&utm_content=refer_page"
+                href="https://refer.haulla.com/?utm_source=promotion&utm_medium=email_esignature&utm_campaign=referral0000&utm_content=banner"
               >
                 <img
                   src={`${window.location.origin}/haulla-gmail-signature-banner-v-2@3x.png`}
