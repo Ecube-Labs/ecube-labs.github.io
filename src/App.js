@@ -96,9 +96,9 @@ function Template({ id, component: Component }) {
       {/* NOTE: 퍼블리싱 대충해서 컨텐츠 안들어가면 템플릿 깨짐. 기본값 대충 넣어둠. */}
       <Component
         id={id}
-        name={name || "Sapphira Park"}
-        jobTitle={jobTitle || "Designer / Design Department"}
-        phoneNumber={phoneNumber || "+82.10.0000.0000"}
+        name={name || "Sean Gwon"}
+        jobTitle={jobTitle || "CEO"}
+        phoneNumber={phoneNumber || "123-456-7890"}
         tel={locationMap[loc].tel}
         fax={locationMap[loc].fax}
         address={locationMap[loc].address}
