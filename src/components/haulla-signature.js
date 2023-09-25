@@ -140,9 +140,6 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
           </tr>
           <tr>
             <td colSpan="3">
-              {/* 원래 배너에 포함된 이미지, 백그라운드, 링크 등이 모두 분리된 컴포넌트였는데 이메일 서명에서는 레이아웃 구성이 상당히 까다롭고 textDecoration 같은 property 는 동작도 하지 않는다.
-              그래서 모든 컴포넌트를 통합한 배너 이미지를 새로 받았다.
-              Takeaway: 서명에서 복잡한 컴포넌트는 그냥 통 이미지로 받는게 좋다. */}
               <a
                 style={{
                   fontSize: "16px",
@@ -158,6 +155,27 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                     height: "64px",
                   }}
                   alt="Dumpster"
+                />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="3">
+              <a
+                style={{
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  color: "#015dee",
+                }}
+                href="https://www.haulla.com/faq/how-can-i-receive-a-70-credit-on-my-first-invoice?utm_source=promotion&utm_medium=email_esignature&utm_campaign=autopay$70&utm_content=banner"
+              >
+                <img
+                  src={`${window.location.origin}/haulla-gmail-signature-promotion-banner.png`}
+                  style={{
+                    width: "448px",
+                    height: "64px",
+                  }}
+                  alt="Promotion"
                 />
               </a>
             </td>
