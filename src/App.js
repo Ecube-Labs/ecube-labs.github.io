@@ -16,13 +16,13 @@ const locationMap = {
       </>
     ),
   },
-  FastFive: {
+  '14F': {
     tel: "+82.2.868.0293",
     fax: "+82.2.868.0294",
     address: (
       <>
-        #1323, 300, Digital-ro, Guro-gu, Seoul, <br />
-        Republic of Korea (Postal: 08379)
+        #1411, 55, Digital-ro 34-gil, Guro-gu, Seoul, <br />
+        Republic of Korea (Postal: 08378)
       </>
     ),
   },
@@ -85,7 +85,7 @@ function Template({ id, component: Component }) {
       />
       <select value={loc} onChange={(e) => setLoc(e.currentTarget.value)}>
         <option value="HQ">HQ</option>
-        <option value="FastFive">FastFive</option>
+        <option value="14F">14F</option>
         <option value="Gimpo">Gimpo</option>
         <option value="Los Angeles">Los Angeles</option>
       </select>
