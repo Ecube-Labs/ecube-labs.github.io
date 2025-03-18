@@ -154,7 +154,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                     width: "448px",
                     height: "64px",
                   }}
-                  alt="Promotion"
+                  alt="Referral"
                 />
               </a>
             </td>
