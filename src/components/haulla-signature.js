@@ -146,31 +146,10 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   fontWeight: "bold",
                   color: "#015dee",
                 }}
-                href="https://refer.haulla.com/?utm_source=promotion&utm_medium=email_esignature&utm_campaign=referral0000&utm_content=banner"
+                href={`http://haulla-api.haulla.com/referrals/redirect-hubspot-forms/?channel=${encodeURIComponent('Email signature banner')}`}
               >
                 <img
-                  src={`${window.location.origin}/haulla-gmail-signature-banner-v-2@3x.png`}
-                  style={{
-                    width: "448px",
-                    height: "64px",
-                  }}
-                  alt="Dumpster"
-                />
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td colSpan="3">
-              <a
-                style={{
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  color: "#015dee",
-                }}
-                href="https://www.haulla.com/faq/how-can-i-receive-a-70-credit-on-my-first-invoice?utm_source=promotion&utm_medium=email_esignature&utm_campaign=autopay$70&utm_content=banner"
-              >
-                <img
-                  src={`${window.location.origin}/haulla-gmail-signature-promotion-banner.png`}
+                  src={`${window.location.origin}/haulla-gmail-signature-referral-banner.png`}
                   style={{
                     width: "448px",
                     height: "64px",
