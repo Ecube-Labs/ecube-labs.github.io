@@ -146,7 +146,7 @@ export function HaullaSignature({ id, name, jobTitle, phoneNumber }) {
                   fontWeight: "bold",
                   color: "#015dee",
                 }}
-                href={`http://haulla-api.haulla.com/referrals/redirect-hubspot-forms/?channel=${encodeURIComponent('Email signature banner')}`}
+                href={`http://haulla-api-stage.haulla.com/referrals/redirect-hubspot-forms/?channel=${encodeURIComponent('Email signature banner')}`}
               >
                 <img
                   src={`${window.location.origin}/haulla-gmail-signature-referral-banner.png`}
